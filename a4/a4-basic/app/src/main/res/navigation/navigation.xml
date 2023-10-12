@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/navigation"
+            app:startDestination="@id/fragmentListScreen">
+
+    <fragment
+            android:id="@+id/fragmentListScreen"
+            android:name="com.example.a4basic.FragmentListScreen"
+            android:label="fragment1"
+            tools:layout="@layout/fragment_list_screen">
+        <action
+                android:id="@+id/action_list_to_add"
+                app:destination="@id/fragmentAddScreen"/>
+        <action android:id="@+id/action_list_to_display"
+                app:destination="@id/fragmentDisplayScreen"/>
+    </fragment>
+    <fragment
+            android:id="@+id/fragmentAddScreen"
+            android:name="com.example.a4basic.FragmentAddScreen"
+            android:label="fragment2"
+            tools:layout="@layout/fragment_add_screen">
+        <action android:id="@+id/action_add_back_list" app:popUpTo="@id/fragmentAddScreen"
+                app:popUpToInclusive="true"/>
+    </fragment>
+    <fragment
+            android:id="@+id/fragmentDisplayScreen"
+            android:name="com.example.a4basic.FragmentDisplayScreen"
+            android:label="fragment3"
+            tools:layout="@layout/fragment_display_screen">
+        <action android:id="@+id/action_display_to_edit"
+                app:destination="@id/fragmentEditScreen"/>
+    </fragment>
+    <fragment
+            android:id="@+id/fragmentEditScreen"
+            android:name="com.example.a4basic.FragmentEditScreen"
+            android:label="fragment4"
+            tools:layout="@layout/fragment_edit_screen">
+        <argument android:name="title" app:argType="string"/>
+        <argument android:name="body" app:argType="string"/>
+        <argument android:name="important" app:argType="boolean"/>
+        <argument android:name="id" app:argType="integer"/>
+        <action android:id="@+id/action_edit_back_display" app:popUpTo="@id/fragmentEditScreen"
+                app:popUpToInclusive="true"/>
+    </fragment>
+</navigation>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                                   xmlns:app="http://schemas.android.com/apk/res-auto"
+                                                   xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+                                                   android:layout_height="match_parent" android:padding="16dp">
+
+    <TextView
+            android:text="Note #-1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/displayLabel"
+            android:textStyle="bold" android:textSize="20sp"
+            app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"/>
+    <com.google.android.material.chip.Chip
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/chip"
+            android:text="Important"
+            app:chipBackgroundColor="@android:color/holo_red_dark" android:textColor="@color/white"
+            app:layout_constraintTop_toTopOf="@+id/displayLabel"
+            app:layout_constraintBottom_toBottomOf="@+id/displayLabel"
+            app:layout_constraintEnd_toStartOf="@+id/displayEdit" android:layout_marginEnd="16dp"/>
+    <TextView
+            android:text="nullTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/displayTitle"
+            app:layout_constraintTop_toBottomOf="@+id/displayLabel" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="32dp" app:layout_constraintBottom_toTopOf="@+id/displayBody"
+            android:layout_marginBottom="16dp" android:textSize="20sp" android:textStyle="bold"/>
+    <TextView
+            android:text="nullBody"
+            android:layout_width="0dp"
+            android:layout_height="0dp" android:id="@+id/displayBody"
+            app:layout_constraintTop_toBottomOf="@+id/displayTitle"
+            app:layout_constraintStart_toStartOf="parent"
+            android:textSize="20sp" app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/displayEdit" android:layout_marginEnd="16dp"/>
+    <Button
+            android:text="EDIT"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/displayEdit"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
